@@ -1,0 +1,281 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" Inherits="SiteMaster" Codebehind="Site.master.cs" %>
+<%@ Register TagPrefix="telerik" Namespace="Telerik.Web.UI" Assembly="Telerik.Web.UI" %>
+<!DOCTYPE html>
+
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%: Page.Title %>BTV - Gian Hàng Tết</title>
+
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>
+    <webopt:bundlereference runat="server" path="~/Content/css" />
+    <link href="~/images/icons/icon.png" rel="shortcut icon" type="image/x-icon" />
+    <script type="text/javascript">
+
+        var clicked = false;
+        function CheckBrowser() {
+            if (clicked == false) {
+                //Browser closed
+            }
+            else {
+                //redirected
+                clicked = false;
+            }
+        }
+     
+        function Logout() {
+            if (clicked == false)//browser is closed
+            {
+                window.location = "Logoff.aspx";
+            }
+        }
+    </script>
+    <style type="text/css">
+        .auto-style2 {
+            height: 22px;
+        }
+        .auto-style3 {
+            height: 22px;
+            width: 309px;
+        }
+        .auto-style6 {
+            height: 22px;
+            width: 1172px;
+        }
+       
+        .auto-style7 {
+            left: 1px;
+            top: 0px;
+        }
+       
+        </style>
+
+</head>
+ <body  onbeforeunload="Logout()" onclick="clicked=true;"> 
+    <form runat="server">
+        <asp:ScriptManager runat="server">
+            <Scripts>
+                <%--To learn more about bundling scripts in ScriptManager see http://go.microsoft.com/fwlink/?LinkID=301884 --%>
+                <%--Framework Scripts--%>
+                <asp:ScriptReference Name="MsAjaxBundle" />
+                <asp:ScriptReference Name="jquery" />
+                <asp:ScriptReference Name="bootstrap" />
+                <asp:ScriptReference Name="respond" />
+                <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
+                <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
+                <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
+                <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
+                <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
+                <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
+                <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
+                <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
+                <asp:ScriptReference Name="WebFormsBundle" />
+                <%--Site Scripts--%>
+            </Scripts>
+        </asp:ScriptManager>
+
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" runat="server" href="~/">Gian Hàng Tết - Xuân Canh Tý 2020</a>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a runat="server" href="~/"></a></li>
+                    </ul>
+                     <asp:LoginView runat="server" ViewStateMode="Disabled">
+                        <AnonymousTemplate>
+                            <ul class="nav navbar-nav navbar-right">
+                                <li><a runat="server" href="~/Account/Login">Log in</a></li>
+                            </ul>
+                        </AnonymousTemplate>
+                        <LoggedInTemplate>
+                            <ul class="nav navbar-nav navbar-right">
+                                <li><a runat="server" href="~/Account/Manage" title="Manage your account">Hello, <%: Context.User.Identity.GetUserName() %>
+                                   <% if(SaintPolycarp.BanhChung.SharedIdentityMethod.UserBelongToRole(Context.User.Identity.GetUserName(), "admin"))
+                                    {%>(admin user)  <%}%> !</a>
+                                </li>
+                                <li>
+                                    <asp:LoginStatus runat="server" LogoutAction="Redirect" LogoutText="Log off" LogoutPageUrl="~/" OnLoggingOut="Unnamed_LoggingOut" />
+                                </li>
+                            </ul>
+                        </LoggedInTemplate>
+                    </asp:LoginView>
+                </div>
+            </div>
+        </div>
+        <div>
+            <table style="width:100%;" >
+                <tr>
+                    <td class="auto-style3" align="center">
+                                   
+                    </td>
+            <td class="auto-style6" valign="top">
+            <telerik:RadMenu ID="RadMenu1" runat="server" EnableRoundedCorners="true" EnableShadows="true" Skin="Black" CssClass="auto-style7"  >
+            <Items>
+                  <telerik:RadMenuItem Text="Invoice (1)" NavigateUrl="Invoice">
+                     <Items>    
+                          <telerik:RadMenuItem Text="Create new" NavigateUrl="Invoice">
+                        </telerik:RadMenuItem>
+                          <telerik:RadMenuItem IsSeparator="True" />
+                          <telerik:RadMenuItem Text="Existing">
+                              <Items>                     
+                            </Items>
+                        </telerik:RadMenuItem>
+                    </Items>
+                </telerik:RadMenuItem>               
+                <telerik:RadMenuItem Text="Reports">
+                    <Items>
+                       
+                         <telerik:RadMenuItem Text="Inventory Summary" NavigateUrl="InventorySummary">
+                        </telerik:RadMenuItem>
+                        <telerik:RadMenuItem IsSeparator="True" />
+                        <telerik:RadMenuItem Text="Order Details" NavigateUrl="OrderDetails">
+                        </telerik:RadMenuItem>
+                     
+                    </Items>
+                </telerik:RadMenuItem>
+              
+                <telerik:RadMenuItem Text="Administration (Restricted)">
+                    <GroupSettings ExpandDirection="Down"></GroupSettings>
+                    <Items>
+                          <telerik:RadMenuItem Text="Admin">
+                              <Items>   
+                                   <telerik:RadMenuItem Text="Tracking Sheet" NavigateUrl="~/TrackingSheet">
+                                    </telerik:RadMenuItem>
+                            </Items>
+                        </telerik:RadMenuItem>
+                         <telerik:RadMenuItem IsSeparator="True" />
+                         <telerik:RadMenuItem Text="Super Admin">
+                              <Items>   
+                                   <telerik:RadMenuItem Text="Register User" NavigateUrl="~/Account/Register">
+                                    </telerik:RadMenuItem>
+                            </Items>
+                        </telerik:RadMenuItem>
+                        
+                       
+        
+                    </Items>
+                </telerik:RadMenuItem>
+         
+            </Items>
+        </telerik:RadMenu>
+              
+                    </td>
+                    <td align="center">
+                         
+                        &nbsp;</td>
+                </tr>
+                 <tr>
+                    <td align="center" style="vertical-align: top" class="auto-style3">
+                         <asp:Image ID="ImagePaidInFull" runat="server" ImageUrl="~/images/PaidInFull.png"  Height="66px" Width="97px" Visible="false" />
+                        <br />
+                          <br />
+                           <asp:Image ID="ImageOrderPickup" runat="server" ImageUrl="~/images/OrderPickup2.gif"  Height="76px" Width="86px" Visible="false"/>
+                        <br />
+                     </td>
+                    <td class="auto-style6" >
+                         <div class="container body-content">
+                            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                                <p>
+                                </p>
+                            </asp:ContentPlaceHolder>
+                            
+                        
+                        </div>
+                    </td>
+                    <td align="center">
+                          <table style="width: 100%;">
+                            
+                               <tr>
+                                   <td>
+                                   <table style="width: 100%;">
+                                        <tr>
+                                            <td valign="top" align="center">  
+                                                    
+                                                  <table style="width: 100%;">
+                                                     <tr>
+                                                <td valign="top" align="center">  
+                                                    <br /><strong>Cộng Đoàn Saint Polycarp
+                                                    <br />Đức Maria Mẹ Thiên Chúa
+                                                    <br />Xuân Canh Tý 2020</strong>
+                                                </td>
+                                                     </tr>
+                              
+                                            </table>
+
+                                            </td>
+                                         </tr>
+                              
+                                      </table>
+                                   </td>
+
+                               </tr>
+                                
+                          
+                             <tr>
+                                  <td>   
+                                    <table style="width: 100%;">
+                                       <tr>
+                                            <td valign="top" align="center">  <asp:Image ID="Image2" runat="server" ImageUrl="~/images/mouse4.jpg" Height="100px" Width="150px" /></td>
+                                       </tr>
+                              
+                                      </table>
+
+                                  </td>
+
+                              </tr>
+                  
+                              </table>
+                       
+                     
+            
+
+                      
+                       </td> 
+                     </tr>
+               
+            </table>
+          
+            <table style="width:100%;">
+                <tr>
+                 
+                    <td style="vertical-align: top; width:90%;">
+                        <asp:ContentPlaceHolder ID="ConsoleContent" runat="server">
+                        </asp:ContentPlaceHolder>
+                     </td>
+                  
+                    </tr>
+            </table>
+             <table style="width:100%;">
+          
+                 <tr>
+                    <td style="vertical-align: top" class="auto-style3">
+                        &nbsp;</td>
+                    <td class="auto-style6" >
+                         <div class="container body-content">
+                            <hr />
+                            <footer>
+                                <p style="text-align:right; vertical-align:bottom">&copy; <%--To learn more about bundling scripts in ScriptManager see http://go.microsoft.com/fwlink/?LinkID=301884 --%>- Developed by Gary (Chau) Nguyen. All rights reserved. &nbsp;&nbsp;&nbsp; </p>
+                            </footer>
+                        </div>
+                    </td>
+                    <td class="auto-style2">
+                     
+                    </td>
+                </tr>
+               
+            </table>
+        </div>
+       
+    </form>
+</body>
+</html>

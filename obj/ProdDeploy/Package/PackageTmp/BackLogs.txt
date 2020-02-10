@@ -1,0 +1,21 @@
+Backlogs:
+- Fix major bug: first invoice created, it records the created user correctly. However, when another user update the invoice, it reconize the the creator.
+- Add the page to load all the histories
+- Add the way to restore from any histories as possible.
+- Try not to implement Security and store in SQL. Try to store in data file as possible
+- order detail, performance for slow when click on the filter
+- Make a way to easily track TNTT sale. Either use Good sheet, have column for Checkout amount, return amount, so the amount sold. Then convert that in to the invoice. 
+   might need to have another radio button for TNTT and make sure the mobile doesn't break.
+- Make master collection to choose and selet which year to load the data
+
+Fix not:
+- Update GoogleSheet with the total pickup automatically
+- Order #5 doesn't work (Invoice 142 has incorrect data). Therefore, the Paid Amount is blank, so it doesn't display the check amount correctly. Then make the invoice doesn't display in the CheckSheet
+
+- Display Note on the export in Balance sheet
+- Create by is wrong, it shows as the last update
+
+Step to Google Sheet API:
+1. Setup API key: https://console.developers.google.com/apis/dashboard
+    Tutorial: https://www.youtube.com/watch?v=shctaaILCiU&list=UUm5pREiVM6hwsZKqJww8XuA&index=21
+2. 

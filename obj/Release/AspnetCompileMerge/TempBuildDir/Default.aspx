@@ -1,0 +1,85 @@
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site2.Master" AutoEventWireup="true" Inherits="_Default" Codebehind="Default.aspx.cs" %>
+
+<asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
+      <style type="text/css">
+        .frontpagestyle {
+  padding: 30px;
+  margin-bottom: 30px;
+  font-size: 14px;
+  font-weight: 200;
+  line-height: 2.1428571435;
+  color: red;
+ 
+  background-color: #eeeeee;
+}
+
+.frontpagestyle h3 {
+  line-height: 1;
+  color: black;
+  }
+
+.frontpagestyle p {
+  line-height: 1.4;
+}
+
+.container .frontpagestyle {
+  border-radius: 6px;
+}
+
+       
+      
+       
+          .auto-style8 {
+              color: #FB0202;
+          }
+
+       
+      
+       
+        .auto-style9 {
+        text-decoration: underline;
+    }
+
+       
+      
+       
+        </style>
+    <br />
+    <br />
+    <br />
+    <div class="frontpagestyle">
+    
+           <table style="width: 100%; background-color: white;">
+               <tr>
+                    <td align="center" style="width: 100%; vertical-align: central; align-content:center">
+                            <h1 class="auto-style8">
+                                <span class="auto-style9"><strong>Xuân Canh Tý 2020</strong></span><br /> <br /> 
+                                Dự án Bánh Chưng <br />
+                                Ban Thường Vụ @ Cộng Đoàn St. Polycarp</h1>
+                                             
+                <br />
+                   </td>
+               </tr>
+        <tr>
+           
+            <td align="center"  style="width: 100%; vertical-align: central; align-content:center">
+                <asp:Image ID="Image2" runat="server" ImageUrl="~/images/home/banh-chung-tet.jpg" />
+                <asp:Image ID="Image1" runat="server" Height="300px" ImageUrl="~/images/home/tet.png" Width="300px" />
+            
+            </td>
+        
+      
+           
+        </tr>
+           
+    </table>
+         
+    </div>
+    <br /> 
+    <br /> 
+
+ 
+ 
+</asp:Content>
+
+
