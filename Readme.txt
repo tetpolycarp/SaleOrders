@@ -1,10 +1,10 @@
 ﻿
-Sync Database: tetpolycarp@gmail.com - polycarp18
+Sync Database: tetpolycarp@gmail.com - polycarp18 (All the googlesheet and backup database on here)
 Azure account: chaunguyen1997@yahoo.com - email pwd
 Azure machine: btvpolycarp.westus2.cloudapp.azure.com - BTV - chau - iBreakUbuil7 - 51.141.165.19
-Church email: btvpolycarp@gmail.com - polycarp14 (github as well btvpolycarp)
-Github account: btvpolycarp - polycarp 14
-Repo: https://github.com/btvpolycarp/saleorder.git
+Church email: btvpolycarp@gmail.com - polycarp14 
+Github account: tetpolycarp@gmail.com - polycarp18 (old act: btvpolycarp - polycarp 14 - https://github.com/btvpolycarp/saleorder.git)
+Repo: https://github.com/tetpolycarp/SaleOrders.git
 Machine require to install SQL Express for security login
 
 
@@ -18,6 +18,7 @@ Steps to do for the new year
 
 
 Backlogs:
+- Try to see if we can run Azure IIS and SQL. Also use Azure share file
 - Notes: Anh Tom: Làm cho anh một trang mới để anh khỏi dùng excel cho phần giao tiền càng hay nếu có thể.  Mỗi lần giao anh cần ghi nhận số tiền giao, trừ chi phiếu và các khoản chi tiêu cho tiền chợ, tiền xăng, tiền mua đồ, tiền refund để tính ra số tiền mặt.  Thêm một bàn để ghi nhận số tiền mặt theo đơn vị $1, $5, $10 v.v.  Và làm y như vậy mỗi kỳ giao tiền
 Chau's note: Maybe this separate page con be indenpent with tracking sheet. Just allow free txt to enter but it does have the total amount giao as recommend from tracking sheet???
 - Create the Tracking Sheet for mobile, so user can log using his account, so he can select on the button for each "Nhan" each "goi". button cho nguoi giao va nguoi nhan. Make be need to have the "workflow status". have receiving date/time stamp.
@@ -57,6 +58,11 @@ Fix not:
 
 - Display Note on the export in Balance sheet
 - Create by is wrong, it shows as the last update
+
+Step to publish google sheet using iFrame: http://googledrive.in30minutes.com/google-sheets-embed-live-spreadsheet/
+1. Note share the sheet to everyone so they can edit w/o login.
+   Painful note: when sharing, there is a "Advance" button, click on it to get the link for share file.
+2. Open the sheet, then on the menu, select "File -> Publish to the Web" to get the iFrame code, however, use URL linke from step 1.
 
 Step to Google Sheet API:
 1. Setup API key: https://console.developers.google.com/apis/dashboard
